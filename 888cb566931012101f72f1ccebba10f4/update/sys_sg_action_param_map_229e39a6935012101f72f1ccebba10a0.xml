@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_action_param_map">
+    <sys_sg_action_param_map action="INSERT_OR_UPDATE">
+        <button display_value="Edit Button (Requested)">ee9e39a6935012101f72f1ccebba109c</button>
+        <item_parameter display_value="Requested short_description">6e9e39a6935012101f72f1ccebba109b</item_parameter>
+        <sys_class_name>sys_sg_action_param_map</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-08-31 14:32:28</sys_created_on>
+        <sys_id>229e39a6935012101f72f1ccebba10a0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>6e9e39a6935012101f72f1ccebba109b</sys_name>
+        <sys_package display_value="Stitch" source="x_1344773_stitch">888cb566931012101f72f1ccebba10f4</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Stitch">888cb566931012101f72f1ccebba10f4</sys_scope>
+        <sys_update_name>sys_sg_action_param_map_229e39a6935012101f72f1ccebba10a0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-08-31 14:32:28</sys_updated_on>
+        <ui_parameter display_value="Short description">2e9e39a6935012101f72f1ccebba109e</ui_parameter>
+    </sys_sg_action_param_map>
+</record_update>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="6b7e35a6935012101f72f1ccebba10d6" label="Requested" max_length="40" name="x_1344773_stitch_requested" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="State" max_length="40" name="state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Complete" value="complete"/>
+                <element inactive_on_update="false" label="In progress" value="in_progress"/>
+                <element inactive_on_update="false" label="New" value="new"/>
+            </choice>
+        </element>
+        <element attributes="encode_utf8=false" label="Requestor" max_length="32" name="requestor" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Assigned to" mandatory="true" max_length="100" name="assigned_to" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Due date" max_length="40" name="due_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Size" max_length="40" name="size" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Team" value="team"/>
+                <element inactive_on_update="false" label="Individual" value="individual"/>
+                <element inactive_on_update="false" label="Organizational" value="organizational"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Short description" max_length="1000" name="short_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="low" label="Priority" mandatory="true" max_length="40" name="priority" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Low" value="low"/>
+                <element inactive_on_update="false" label="Critical" value="critical"/>
+                <element inactive_on_update="false" label="Moderate" value="moderate"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="requestor"/>
+        </index>
+    </element>
+</database>

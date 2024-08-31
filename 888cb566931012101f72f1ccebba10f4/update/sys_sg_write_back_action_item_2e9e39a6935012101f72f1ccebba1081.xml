@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_write_back_action_item">
+    <sys_sg_write_back_action_item action="INSERT_OR_UPDATE">
+        <description/>
+        <execution_script/>
+        <name>New (Requested)</name>
+        <parameter_screen/>
+        <query_condition table="x_1344773_stitch_requested">sys_idSTARTSWITH{{Requested sys_id}}^EQ<item endquery="false" field="sys_id" goto="false" newquery="false" operator="STARTSWITH" or="false" value="{{Requested sys_id}}"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </query_condition>
+        <sys_class_name>sys_sg_write_back_action_item</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-08-31 14:32:28</sys_created_on>
+        <sys_id>2e9e39a6935012101f72f1ccebba1081</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>New (Requested)</sys_name>
+        <sys_package display_value="Stitch" source="x_1344773_stitch">888cb566931012101f72f1ccebba10f4</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Stitch">888cb566931012101f72f1ccebba10f4</sys_scope>
+        <sys_update_name>sys_sg_write_back_action_item_2e9e39a6935012101f72f1ccebba1081</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-08-31 14:32:28</sys_updated_on>
+        <table>x_1344773_stitch_requested</table>
+        <template>assigned_to={{Requested assigned_to}}^due_date={{Requested due_date}}^number={{Requested number}}^priority={{Requested priority}}^requestor={{Requested requestor}}^short_description={{Requested short_description}}^size={{Requested size}}^state={{Requested state}}^EQ</template>
+        <type>new</type>
+        <use_current_record_as_condition>false</use_current_record_as_condition>
+        <use_fields_for_ref_lookup>false</use_fields_for_ref_lookup>
+    </sys_sg_write_back_action_item>
+    <sys_translated_text action="delete_multiple" query="documentkey=2e9e39a6935012101f72f1ccebba1081"/>
+</record_update>

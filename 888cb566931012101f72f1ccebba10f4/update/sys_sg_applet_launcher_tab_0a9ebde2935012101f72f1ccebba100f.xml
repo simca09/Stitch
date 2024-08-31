@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_applet_launcher_tab">
+    <sys_sg_applet_launcher_tab action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applet_launcher display_value="Stitch">c29ebde2935012101f72f1ccebba100e</applet_launcher>
+        <icon display_value="Home Stitch">4a9ebde2935012101f72f1ccebba100f</icon>
+        <label>Stitch</label>
+        <sys_class_name>sys_sg_applet_launcher_tab</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-08-31 14:32:26</sys_created_on>
+        <sys_id>0a9ebde2935012101f72f1ccebba100f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Stitch</sys_name>
+        <sys_package display_value="Stitch" source="x_1344773_stitch">888cb566931012101f72f1ccebba10f4</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Stitch">888cb566931012101f72f1ccebba10f4</sys_scope>
+        <sys_update_name>sys_sg_applet_launcher_tab_0a9ebde2935012101f72f1ccebba100f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-08-31 14:32:26</sys_updated_on>
+    </sys_sg_applet_launcher_tab>
+</record_update>
