@@ -3,19 +3,20 @@
         <element attributes="edge_encryption_enabled=true" choice="1" label="State" max_length="40" name="state" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Complete" value="complete"/>
-                <element inactive_on_update="false" label="In progress" value="in_progress"/>
                 <element inactive_on_update="false" label="New" value="new"/>
+                <element inactive_on_update="false" label="In progress" value="in_progress"/>
             </choice>
         </element>
         <element attributes="encode_utf8=false" label="Requestor" max_length="32" name="requestor" reference="sys_user" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Assigned to" mandatory="true" max_length="100" name="assigned_to" type="string"/>
+        <element attributes="encode_utf8=false" label="Assigned person" max_length="32" name="assigned_person" reference="sys_user" reference_qual="javascript:'sys_idIN'+getIDs(current.group); function getIDs(grp){var m=GlideUserGroup.getMembers(grp);var ids=''; while (m.next()){ids+= (m.user+',');} return ids;}" type="reference" use_reference_qualifier="advanced"/>
         <element attributes="edge_encryption_enabled=true" label="Due date" max_length="40" name="due_date" type="glide_date"/>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Size" max_length="40" name="size" type="choice">
             <choice>
+                <element inactive_on_update="false" label="Organizational" value="organizational"/>
                 <element inactive_on_update="false" label="Team" value="team"/>
                 <element inactive_on_update="false" label="Individual" value="individual"/>
-                <element inactive_on_update="false" label="Organizational" value="organizational"/>
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" label="Short description" max_length="1000" name="short_description" type="string"/>
@@ -26,7 +27,14 @@
                 <element inactive_on_update="false" label="Moderate" value="moderate"/>
             </choice>
         </element>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" dependent="assigned_person" dependent_on_field="assigned_person" label="Group Assigned" max_length="32" name="group_assigned" reference="sys_user_group" type="reference" use_dependent_field="true"/>
         <index name="index">
+            <element name="assigned_person"/>
+        </index>
+        <index name="index3">
+            <element name="group_assigned"/>
+        </index>
+        <index name="index4">
             <element name="requestor"/>
         </index>
     </element>
