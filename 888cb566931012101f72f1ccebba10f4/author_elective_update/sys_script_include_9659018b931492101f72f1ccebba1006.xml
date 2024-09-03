@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1344773_stitch.Person Select server call</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>Assigned Person will be called</description>
+        <name>Person Select server call</name>
+        <script><![CDATA[var userFilters = Class.create();
+userFilters.prototype = {
+    initialize: function() {},
+    groupuserfilters: function(groupId) {
+        gs.addInfoMessage(groupId); // For debugging
+        var groupMembers = new GlideRecord('sys_user_grmember');
+        groupMembers.addQuery('group', groupId);
+        groupMembers.query();
+        var query = 'sys_idIN';
+        while (groupMembers.next()) {
+            var userId = groupMembers.getValue('user');
+            query += userId + ',';
+        }
+        query = query.slice(0, -1);
+        return query;
+    },
+    type: 'userFilters'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-02 00:26:06</sys_created_on>
+        <sys_id>9659018b931492101f72f1ccebba1006</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Person Select server call</sys_name>
+        <sys_package display_value="Stitch" source="x_1344773_stitch">888cb566931012101f72f1ccebba10f4</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Stitch">888cb566931012101f72f1ccebba10f4</sys_scope>
+        <sys_update_name>sys_script_include_9659018b931492101f72f1ccebba1006</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-02 13:26:06</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Stitch">888cb566931012101f72f1ccebba10f4</application>
+        <file_path/>
+        <instance_id>dda948251b6e79d8ba5ceb9b2d4bcb9d</instance_id>
+        <instance_name>dev213177</instance_name>
+        <name>sys_script_include_9659018b931492101f72f1ccebba1006</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1344773_stitch.Person Select server call&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description&gt;Assigned Person will be called&lt;/description&gt;&lt;name&gt;Person Select server call&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var userFilters = Class.create();
+userFilters.prototype = {
+    initialize: function() {},
+    groupuserfilters: function(groupId) {
+        gs.addInfoMessage(groupId); // For debugging
+        var groupMembers = new GlideRecord('sys_user_grmember');
+        groupMembers.addQuery('group', groupId);
+        groupMembers.query();
+        var query = 'sys_idIN';
+        while (groupMembers.next()) {
+            var userId = groupMembers.getValue('user');
+            query += userId + ',';
+        }
+        query = query.slice(0, -1);
+        return query;
+    },
+    type: 'userFilters'
+};]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-09-02 00:26:06&lt;/sys_created_on&gt;&lt;sys_id&gt;9659018b931492101f72f1ccebba1006&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_name&gt;Person Select server call&lt;/sys_name&gt;&lt;sys_package display_value="Stitch" source="x_1344773_stitch"&gt;888cb566931012101f72f1ccebba10f4&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Stitch"&gt;888cb566931012101f72f1ccebba10f4&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_9659018b931492101f72f1ccebba1006&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-09-02 13:26:06&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>2055793812</payload_hash>
+        <record_name>Person Select server call</record_name>
+        <reverted_from/>
+        <source>3cc6bfa6939812101f72f1ccebba1042</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-02 13:26:06</sys_created_on>
+        <sys_id>b592001f935012101f72f1ccebba1001</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191b2ea03bb0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-02 13:26:06</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>f992001f86501210025f2c10945d7900</update_guid>
+        <update_guid_history>f992001f86501210025f2c10945d7900:2055793812,0aaaffcffd101210a24a86635fbfb540:415946035,04987b4f3d10121038b597ba6e2f4363:-1638564712,cf22b7c7b21012102b792181705b26a3:-652972748,0c109183b154921067aa6ff176b0cd2e:-643783582</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-02 22:52:03</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>1ce3bc43830040a6a0296a9c1c391824</sys_id>
+        <sys_metadata>9659018b931492101f72f1ccebba1006</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Person Select server call</sys_name>
+        <sys_package display_value="Stitch" source="x_1344773_stitch">888cb566931012101f72f1ccebba10f4</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Stitch">888cb566931012101f72f1ccebba10f4</sys_scope>
+        <sys_scope_delete display_value="">05b94b74c727435ba4d4d84d3cf3c311</sys_scope_delete>
+        <sys_update_name>sys_script_include_9659018b931492101f72f1ccebba1006</sys_update_name>
+        <sys_update_version display_value="sys_script_include_9659018b931492101f72f1ccebba1006">b592001f935012101f72f1ccebba1001</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-02 22:52:03</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

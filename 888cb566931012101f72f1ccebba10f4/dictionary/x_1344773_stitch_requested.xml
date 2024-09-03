@@ -2,14 +2,16 @@
     <element db_object_id="6b7e35a6935012101f72f1ccebba10d6" label="Requested" max_length="40" name="x_1344773_stitch_requested" type="collection">
         <element attributes="edge_encryption_enabled=true" choice="1" label="State" max_length="40" name="state" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Complete" value="complete"/>
-                <element inactive_on_update="false" label="New" value="new"/>
-                <element inactive_on_update="false" label="In progress" value="in_progress"/>
+                <element inactive_on_update="false" label="Road blocked - client" sequence="3" value="4"/>
+                <element inactive_on_update="false" label="Road blocked - company" sequence="4" value="5"/>
+                <element inactive_on_update="false" label="Complete" sequence="2" value="complete"/>
+                <element inactive_on_update="false" label="New" sequence="0" value="new"/>
+                <element inactive_on_update="false" label="In progress" sequence="1" value="in_progress"/>
             </choice>
         </element>
         <element attributes="encode_utf8=false" label="Requestor" max_length="32" name="requestor" reference="sys_user" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Assigned to" mandatory="true" max_length="100" name="assigned_to" type="string"/>
-        <element attributes="encode_utf8=false" label="Assigned person" max_length="32" name="assigned_person" reference="sys_user" reference_qual="javascript:'sys_idIN'+getIDs(current.group); function getIDs(grp){var m=GlideUserGroup.getMembers(grp);var ids=''; while (m.next()){ids+= (m.user+',');} return ids;}" type="reference" use_reference_qualifier="advanced"/>
+        <element attributes="encode_utf8=false" label="Assigned person" max_length="32" name="assigned_person" reference="sys_user" reference_qual="javascript&amp;colon; var query;&#13;&#10;var arr = [];&#13;&#10;var gr = new GlideRecord(&quot;sys_user_grmember&quot;);&#13;&#10;gr.addQuery(&quot;group&quot;, current.variables.group_name);&#13;&#10;gr.query();&#13;&#10;while (gr.next()) {&#13;&#10;   arr.push(gr.getValue('user'));&#13;&#10;}&#13;&#10;query = 'sys_idIN' + arr.toString();&#13;&#10;query;" reference_qual_condition="javascript&amp;colon; var query;&#13;&#10;var arr = [];&#13;&#10;var gr = new GlideRecord(&quot;sys_user_grmember&quot;);&#13;&#10;gr.addQuery(&quot;group&quot;, current.variables.group_name);&#13;&#10;gr.query();&#13;&#10;while (gr.next()) {&#13;&#10;   arr.push(gr.getValue('user'));&#13;&#10;}&#13;&#10;query = 'sys_idIN' + arr.toString();&#13;&#10;query;" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Due date" max_length="40" name="due_date" type="glide_date"/>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Size" max_length="40" name="size" type="choice">
@@ -20,11 +22,12 @@
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" label="Short description" max_length="1000" name="short_description" type="string"/>
-        <element attributes="edge_encryption_enabled=true" choice="3" default="low" label="Priority" mandatory="true" max_length="40" name="priority" type="choice">
+        <element attributes="edge_encryption_enabled=true" choice="3" default="1" label="Priority" mandatory="true" max_length="40" name="priority" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Low" value="low"/>
-                <element inactive_on_update="false" label="Critical" value="critical"/>
-                <element inactive_on_update="false" label="Moderate" value="moderate"/>
+                <element inactive_on_update="false" label="Critical - Overdue" sequence="3" value="4"/>
+                <element inactive_on_update="false" label="Low" sequence="0" value="low"/>
+                <element inactive_on_update="false" label="Critical" sequence="2" value="critical"/>
+                <element inactive_on_update="false" label="Moderate" sequence="1" value="moderate"/>
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true,encode_utf8=false" dependent="assigned_person" dependent_on_field="assigned_person" label="Group Assigned" max_length="32" name="group_assigned" reference="sys_user_group" type="reference" use_dependent_field="true"/>

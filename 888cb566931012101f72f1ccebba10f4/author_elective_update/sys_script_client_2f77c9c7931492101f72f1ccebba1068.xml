@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Assigned Person field will be based off of the Group Assigned field.</description>
+        <field>group_assigned</field>
+        <global>true</global>
+        <isolate_script>false</isolate_script>
+        <messages/>
+        <name>Person Select</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    var ga = new GlideAjax('GetUsersByGroup');
+    ga.addParam('sysparm_name', 'getUsers');
+    ga.addParam('groupId', newValue);
+    ga.getXMLAnswer(function(response) {
+        var userIds = response.responseXML.documentElement.getAttribute("answer");
+        g_form.setValue('assigned_person', '');
+        g_form.getField('assigned_person').reference_qual = 'sys_idIN' + userIds;
+        g_form.refreshOptions('assigned_person');
+    });
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-01 23:56:32</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2f77c9c7931492101f72f1ccebba1068</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Person Select</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Stitch" source="x_1344773_stitch">888cb566931012101f72f1ccebba10f4</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Stitch">888cb566931012101f72f1ccebba10f4</sys_scope>
+        <sys_update_name>sys_script_client_2f77c9c7931492101f72f1ccebba1068</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-02 12:47:28</sys_updated_on>
+        <table>x_1344773_stitch_requested</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Stitch">888cb566931012101f72f1ccebba10f4</application>
+        <file_path/>
+        <instance_id>dda948251b6e79d8ba5ceb9b2d4bcb9d</instance_id>
+        <instance_name>dev213177</instance_name>
+        <name>sys_script_client_2f77c9c7931492101f72f1ccebba1068</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description&gt;Assigned Person field will be based off of the Group Assigned field.&lt;/description&gt;&lt;field&gt;group_assigned&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;false&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Person Select&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    var ga = new GlideAjax('GetUsersByGroup');
+    ga.addParam('sysparm_name', 'getUsers');
+    ga.addParam('groupId', newValue);
+    ga.getXMLAnswer(function(response) {
+        var userIds = response.responseXML.documentElement.getAttribute("answer");
+        g_form.setValue('assigned_person', '');
+        g_form.getField('assigned_person').reference_qual = 'sys_idIN' + userIds;
+        g_form.refreshOptions('assigned_person');
+    });
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-09-01 23:56:32&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;2f77c9c7931492101f72f1ccebba1068&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;Person Select&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Stitch" source="x_1344773_stitch"&gt;888cb566931012101f72f1ccebba10f4&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Stitch"&gt;888cb566931012101f72f1ccebba10f4&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_2f77c9c7931492101f72f1ccebba1068&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-09-02 12:47:28&lt;/sys_updated_on&gt;&lt;table&gt;x_1344773_stitch_requested&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1752225844</payload_hash>
+        <record_name>Person Select</record_name>
+        <reverted_from/>
+        <source>3cc6bfa6939812101f72f1ccebba1042</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-02 12:47:28</sys_created_on>
+        <sys_id>7fb97b4f931012101f72f1ccebba1099</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>191b2c6a37c0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-02 12:47:28</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>f3b97b4f40101210557a117a5beb1d99</update_guid>
+        <update_guid_history>f3b97b4f40101210557a117a5beb1d99:-1752225844,6382f30b7410121009ef488e1afbff24:135007846,fe49054fafd0921045177d3749244bbe:1890035517</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-02 22:52:13</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>391038dab1bc427893349c4ed7358544</sys_id>
+        <sys_metadata>2f77c9c7931492101f72f1ccebba1068</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Person Select</sys_name>
+        <sys_package display_value="Stitch" source="x_1344773_stitch">888cb566931012101f72f1ccebba10f4</sys_package>
+        <sys_parent display_value="Requested">6b7e35a6935012101f72f1ccebba10d6</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Stitch">888cb566931012101f72f1ccebba10f4</sys_scope>
+        <sys_scope_delete display_value="">05b94b74c727435ba4d4d84d3cf3c311</sys_scope_delete>
+        <sys_update_name>sys_script_client_2f77c9c7931492101f72f1ccebba1068</sys_update_name>
+        <sys_update_version display_value="sys_script_client_2f77c9c7931492101f72f1ccebba1068">7fb97b4f931012101f72f1ccebba1099</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-02 22:52:13</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -39,8 +39,26 @@
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
-        <reference_qual>javascript:'sys_idIN'+getIDs(current.group); function getIDs(grp){var m=GlideUserGroup.getMembers(grp);var ids=''; while (m.next()){ids+= (m.user+',');} return ids;}</reference_qual>
-        <reference_qual_condition/>
+        <reference_qual>javascript&amp;colon; var query;&#13;
+var arr = [];&#13;
+var gr = new GlideRecord("sys_user_grmember");&#13;
+gr.addQuery("group", current.variables.group_name);&#13;
+gr.query();&#13;
+while (gr.next()) {&#13;
+   arr.push(gr.getValue('user'));&#13;
+}&#13;
+query = 'sys_idIN' + arr.toString();&#13;
+query;</reference_qual>
+        <reference_qual_condition table="sys_user">javascript&amp;colon; var query;&#13;
+var arr = [];&#13;
+var gr = new GlideRecord("sys_user_grmember");&#13;
+gr.addQuery("group", current.variables.group_name);&#13;
+gr.query();&#13;
+while (gr.next()) {&#13;
+   arr.push(gr.getValue('user'));&#13;
+}&#13;
+query = 'sys_idIN' + arr.toString();&#13;
+query;</reference_qual_condition>
         <reference_type/>
         <spell_check>false</spell_check>
         <staged>false</staged>
@@ -53,13 +71,13 @@
         <sys_scope display_value="Stitch">888cb566931012101f72f1ccebba10f4</sys_scope>
         <sys_update_name>sys_dictionary_x_1344773_stitch_requested_assigned_person</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-02 02:09:05</sys_updated_on>
+        <sys_updated_on>2024-09-02 13:57:25</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
         <use_dependent_field>false</use_dependent_field>
         <use_dynamic_default>false</use_dynamic_default>
-        <use_reference_qualifier>advanced</use_reference_qualifier>
+        <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
         <virtual_type>script</virtual_type>
         <widget/>
